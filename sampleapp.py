@@ -3,11 +3,15 @@
 import bottle
 from bottle import Bottle, request ,template, redirect
 import sqlite3
+import os.path
 
 app = Bottle()
-_pdb = r'C:\Python\venv35\Project1\data\items.db'
-bottle.TEMPLATE_PATH.insert(0, r'C:\Python\venv35\Project1\views')
-
+#_pdb = r'C:\Python\venv35\Project1\data\items.db'
+mypasth = os.path.abspath(__file__)
+_pdb = os.path(mypath,'data\items.db')
+tpath = os.path(mypath,'views')
+#bottle.TEMPLATE_PATH.insert(0, r'C:\Python\venv35\Project1\views')
+bottle.TEMPLATE_PATH.insert(0, tpath)
 
 @app.route('/')
 def index():
@@ -56,5 +60,5 @@ def del_item(item_id):
     return redirect("/list")        
     
 if __name__ == "__main__":
-    app.run(host='localhost', reload=True, port=8080)
+    app.run(host='localhost', reload=True, port=8000)
     
