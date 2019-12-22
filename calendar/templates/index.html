@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    </head>
+    <body>
+        <form action="/" method="POST" >
+            <p>
+                <button name="changeMonth" value="prev">&lt&lt</button>
+                <button name="changeMonth" value="next">&gt&gt</button>
+            </p>
+            <input name="selDate" id="selDate"> 
+            <input name="baseDate" id="baseDate" value="{{baseDate}}"> 
+        </form>
+        <p><div>
+            {{cal | safe}}
+        </div>
+        </p>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./static/support.js"></script>
+    </body>    
+ </html>
